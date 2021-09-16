@@ -6,13 +6,6 @@ function myFunction() {
     document.body.appendChild(para);
   }
 
-  else if (document.getElementById("number").value == "2") {
-    var para = document.createElement("P");
-    para.innerText = document.getElementById("text").value;
-    para.style.color = document.getElementById("pcolor").value
-    document.body.appendChild(para);
-  }
-
   else if (document.getElementById("number").value == "3") {
     var a = document.getElementById("replace1").value - 1;
     var b = document.getElementById("replace2").value - 1;
@@ -21,11 +14,17 @@ function myFunction() {
     var par1 = paragraphs[a];
     var par2 = paragraphs[b];
 
-    var par1storage = par1.innerHTML;
-    var par2storage = par2.innerHTML;
+    var par1textstorage = par1.innerHTML;
+    var par2textstorage = par2.innerHTML;
 
-    par1.innerHTML = par2storage;
-    par2.innerHTML = par1storage;
+    var par1colorstorage = par1.style.color;
+    var par2colorstorage = par2.style.color;
+
+    par1.innerHTML = par2textstorage;
+    par2.innerHTML = par1textstorage;
+
+    par1.style.color = par2colorstorage;
+    par2.style.color = par1colorstorage;
   }
 
   else if (document.getElementById("number").value == "4") {
